@@ -14,11 +14,11 @@ contract NFTCollection is ERC721, ERC721Enumerable {
   {
   }
 
-  function _beforeTokenTransfer(address from, address to, uint256 tokenId) {
+  function _beforeTokenTransfer(address from, address to, uint256 tokenId)  {
     super._beforeTokenTransfer(from, to, tokenId);
   }
 
-  function supportsInterface(bytes4 interfaceId) returns (bool) {
+  function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool) {
     return super.supportsInterface(interfaceId);
   }
 
